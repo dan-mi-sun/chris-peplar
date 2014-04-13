@@ -18,3 +18,10 @@ server.use(restify.queryParser());
 server.get(/\/docs\/public\/?.*/, restify.serveStatic({
   directory: './public/admin'
 }));
+
+// Save posted data
+server.post('/edit', function (req, res, next) {
+
+	console.log(req.params);
+
+});
