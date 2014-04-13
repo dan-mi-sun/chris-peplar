@@ -13,3 +13,8 @@ server.use(restify.acceptParser(server.acceptable));
 server.use(restify.fullResponse());
 server.use(restify.bodyParser());
 server.use(restify.queryParser());
+
+// Serve static files.
+server.get(/\/docs\/public\/?.*/, restify.serveStatic({
+  directory: './public/admin'
+}));
