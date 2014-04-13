@@ -24,4 +24,14 @@ server.post('/edit', function (req, res, next) {
 
 	console.log(req.params);
 
+	var text = req.params;
+
+	fs.writeFile("/text.txt", text, function(err) {
+	    if(err) {
+	        console.log(err);
+	    } else {
+	        console.log("The file was saved!");
+	    }
+	});
+
 });
